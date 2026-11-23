@@ -1,0 +1,51 @@
+{
+  "config": {
+    "task": "summarize the purpose of RAG in exactly 3 lines",
+    "summary_constraint": "summarize the purpose of RAG in exactly 3 lines",
+    "reference_summary": "RAG improves AI response quality by retrieving relevant information \nfrom external documents before generating an answer, reducing hallucination. \nIn education, it helps students and teachers quickly access precise \ninformation from study materials like textbooks and research papers.",
+    "model": "gemma3:1b",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "chunk_size": 80,
+    "chunk_overlap": 20,
+    "top_k": 3
+  },
+  "extraction_stats": {
+    "pages": 1,
+    "tables": 1,
+    "images": 0,
+    "text_length": 274,
+    "chunks": 6
+  },
+  "summaries": {
+    "rag": {
+      "text": "RAG is a method used in AI to improve answer generation by providing contextual information. The system retrieves relevant documents before responding to questions, making responses more accurate and efficient for students and educators alike.  Document retrieval enhances the responsiveness of language models, providing accurate answers with access to updated resources. Furthermore, RAG aids in understanding complex material effectively within educational contexts.",
+      "latency": 3.8507862091064453,
+      "contexts_used": 3
+    },
+    "non_rag": {
+      "text": "The document explains how Retrieval-Augmented Generating (RAG) helps AI models with language understanding improve by retrieving relevant information before answering questions.| It\u2019s beneficial in education due to the potential for large study materials and improved answer quality ensuring more efficient learning for students.| Proper quality of educational resources is key to successful RAG implementation because inaccuracies could misrepresent answers|",
+      "latency": 3.804065227508545,
+      "input_words": 274
+    }
+  },
+  "metrics": {
+    "rag": {
+      "rouge1_f1": 0.3838383838383838,
+      "rouge2_f1": 0.061855670103092786,
+      "rougeL_f1": 0.22222222222222224,
+      "bleu": 0.0,
+      "bertscore_f1": 0.886186420917511,
+      "faithfulness": 0.75,
+      "answer_relevancy": 0.444,
+      "context_recall": 0.85,
+      "context_precision": 0.8
+    },
+    "non_rag": {
+      "rouge1_f1": 0.4081632653061225,
+      "rouge2_f1": 0.10416666666666667,
+      "rougeL_f1": 0.2653061224489796,
+      "bleu": 0.05295296385067158,
+      "bertscore_f1": 0.8631006479263306
+    }
+  }
+}
